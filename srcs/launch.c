@@ -2,8 +2,7 @@
 
 void	launch(char *language, char *number)
 {
-	(void)number;
-	t_dict	**dictionary;
+	t_dict	*dictionary;
 
 	if (ft_strcmp("english", language) == 0)
 		dictionary = createDict("../data/english.dict");
@@ -14,5 +13,9 @@ void	launch(char *language, char *number)
 	else if (ft_strcmp("german", language) == 0)
 		dictionary = createDict("../data/german.dict");
 	else
+	{
 		ft_putstr("language is provided incorrectly!\n");
+		return ;
+	}
+	display(number, dictionary);
 }

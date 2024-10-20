@@ -1,5 +1,34 @@
 #include "../includes/includes.h"
 
+int	ft_strlen(char *str)
+{
+	int	length;
+
+	length = 0;
+	while (str[length])
+		length++;
+	return (length);
+}
+
+char	*ft_strcpySep(char *src, char sep)
+{
+	char	*dest;
+	int		i;
+
+	i = 0;
+	while (src[i] != sep)
+		i++;
+	dest = (char *)malloc(sizeof(char) * (i + 1));
+	i = 0;
+	while (src[i] != sep)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+
 void	ft_putnbr(int nbr)
 {
 	if (nbr == -2147483648)
